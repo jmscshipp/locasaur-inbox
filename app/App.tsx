@@ -1,20 +1,23 @@
-import { createStaticNavigation } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import * as React from 'react';
-import { ParsedConvo } from '../src/utils/parseInbox';
-import InboxScreen from './InboxScreen';
-import MessagingScreen from './MessagingScreen';
+import { createStaticNavigation } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import * as React from "react";
+import { ParsedConvo } from "../src/utils/parseInbox";
+import InboxScreen from "./InboxScreen";
+import MessagingScreen from "./MessagingScreen";
+import RefreshTestScreen from "./RefreshTestScreen";
 
 // defining props for each screen
 export type StackParamList = {
   Inbox: undefined;
-  Messaging: {convo: ParsedConvo}
+  Messaging: { convo: ParsedConvo };
+  RefreshTest: undefined;
 };
 
 const RootStack = createNativeStackNavigator({
   screens: {
     Inbox: InboxScreen,
-    Messaging: MessagingScreen
+    Messaging: MessagingScreen,
+    RefreshTest: RefreshTestScreen,
   },
 });
 
